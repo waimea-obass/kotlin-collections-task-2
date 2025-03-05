@@ -122,7 +122,7 @@ fun setupCages(): MutableList<String> {
 fun placeMonkeyInCage(cageList: MutableList<String>, cageNum: Int, name: String) {
     println("+++ Putting $name into cage $cageNum")
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    
 }
 
 
