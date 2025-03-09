@@ -121,8 +121,6 @@ fun setupCages(): MutableList<String> {
  */
 fun placeMonkeyInCage(cageList: MutableList<String>, cageNum: Int, name: String) {
     println("+++ Putting $name into cage $cageNum")
-
-
 }
 
 
@@ -138,8 +136,14 @@ fun placeMonkeyInCage(cageList: MutableList<String>, cageNum: Int, name: String)
  */
 fun listAllCages(cageList: List<String>) {
     println("CAGES")
+    for (i in 0 ..< cageList.size) {
+        println("- Cage ${i+1}: ${cageList[i]}")
+    }
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+// This does exactly the same thing!
+//    for ((i, monkey) in cageList.withIndex()) {
+//        println("- Cage ${i+1} $monkey")
+//    }
 }
 
 
@@ -153,9 +157,10 @@ fun listAllCages(cageList: List<String>) {
  * - Etc.
  */
 fun listAllMonkeys(cageList: List<String>) {
-    println("MONKEYS")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+     val name = mutableListOf<String>()
+    for ((i, name) in cageList.withIndex()) {
+        println("Monkey $i $name")
+    }
 }
 
 
@@ -170,7 +175,7 @@ fun listAllMonkeys(cageList: List<String>) {
 fun listEmptyCages(cageList: List<String>) {
     println("EMPTY CAGES")
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    print(EMPTY)   // REPLACE THIS WITH YOUR CODE!
 }
 
 
