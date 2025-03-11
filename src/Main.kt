@@ -204,8 +204,11 @@ fun listEmptyCages(cageList: List<String>) {
  */
 fun listAllMonkeysAndCages(cageList: List<String>) {
     println("MONKEYS & CAGES")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    for ((index, i) in cageList.withIndex()) {
+        if (i != EMPTY) {
+            println("- $i (Cage $index) ")
+        }
+    }
 }
 
 
@@ -214,7 +217,7 @@ fun listAllMonkeysAndCages(cageList: List<String>) {
  */
 fun monkeyCount(cageList: List<String>): Int {
 
-    return 0     // REPLACE THIS WITH YOUR CODE!
+    return cageList.count {it != EMPTY}
 }
 
 
@@ -223,7 +226,7 @@ fun monkeyCount(cageList: List<String>): Int {
  */
 fun emptyCount(cageList: List<String>): Int {
 
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    return cageList.count {it == EMPTY}
 }
 
 
@@ -239,9 +242,26 @@ fun emptyCount(cageList: List<String>): Int {
  * Tip: the String.padEnd(N) function will help you here
  */
 fun showMonkeyCages(cageList: List<String>) {
+    if (cageList.isEmpty()) return
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    val columnWidth = 10  // Define a fixed width for each column
+    val separator = "+" + cageList.joinToString("+") { "-".repeat(columnWidth) } + "+"
+
+    // Generate header row (Cage numbers)
+    val headers = cageList.indices.joinToString("|") { " Cage ${it + 1} ".padEnd(columnWidth) }
+
+    // Generate values row (Monkey names)
+    val values = cageList.joinToString("|") { it.padEnd(columnWidth) }
+
+    // Print formatted table
+    println(separator)
+    println("|$headers|")
+    println(separator)
+    println("|$values|")
+    println(separator)
 }
+
+
 
 
 /**
@@ -249,8 +269,7 @@ fun showMonkeyCages(cageList: List<String>) {
  */
 fun clearCage(cageList: MutableList<String>, cageNum: Int) {
     println("--- Clearing cage $cageNum")
-
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    cageList.removeAt(cageNum)
 }
 
 
@@ -263,8 +282,12 @@ fun clearCage(cageList: MutableList<String>, cageNum: Int) {
 fun swapCages(cageList: MutableList<String>, cageNum1: Int, cageNum2: Int) {
     println("<-> Swapping cages $cageNum1 and $cageNum2")
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
 }
+
+
+
+
+
 
 
 
