@@ -269,7 +269,9 @@ fun showMonkeyCages(cageList: List<String>) {
  */
 fun clearCage(cageList: MutableList<String>, cageNum: Int) {
     println("--- Clearing cage $cageNum")
-    cageList[cageNum] = EMPTY
+    val cageNumi == cageList[cageNum] = EMPTY
+    return cageNumi
+
 }
 
 
