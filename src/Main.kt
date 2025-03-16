@@ -206,7 +206,7 @@ fun listAllMonkeysAndCages(cageList: List<String>) {
     println("MONKEYS & CAGES")
     for ((index, i) in cageList.withIndex()) {
         if (i != EMPTY) {
-            println("- $i (Cage $index) ")
+            println("- $i (Cage ${index+1}) ")
         }
     }
 }
